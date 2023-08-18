@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% block title %} {{users}}'s Profile {% endblock title %}
+{% block content %}
+<div class="container mt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                {% if users %}
+                    <h1>{{users.name}}</h1>
+                    <span>Email: </span>
+                    <h4>{{users.profile.email}}</h4>
+                    Phone : <h4>{{users.profile.contact}}</h4>
+                {% else %}
+                    <div class="alert alert-danger"><b>{{users}}</b>{{error}}</div>
+                {% endif %}
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+</div>
+{% endblock content %}
